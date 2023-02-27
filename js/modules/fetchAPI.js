@@ -45,20 +45,24 @@ async function handleResponse(response) {
 			const eventCardLink = document.createElement('a');
 			eventCardLink.className = 'event__card-link'
 			eventCardLink.href = `${element.url}`
+			eventCardLink.setAttribute('target', '_blank')
 			eventsSection.appendChild(eventCardLink)
 
 			const eventCard = document.createElement('div');
 			eventCard.className = 'event__card';
 			eventCardLink.appendChild(eventCard);
 			
+			const eventImageBox = document.createElement('div');
+			eventImageBox.className = 'event__image-box';
+			const eventImage = document.createElement('img');
+			eventImage.setAttribute('src', `${element.images[3].url}`);
+			eventImageBox.appendChild(eventImage);
+			eventCard.appendChild(eventImageBox);
+			
 			const eventTitle = document.createElement('h2');
 			eventTitle.className = 'event__title';
 			eventCard.appendChild(eventTitle);
 			eventTitle.textContent = `${element.name}`;
-
-			const eventImage = document.createElement('img')
-			eventImage.setAttribute('src', `${element.images[0].url}`)
-			eventCard.appendChild(eventImage)
 		}
 
 
