@@ -1,0 +1,18 @@
+.events-section {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1rem;
+}
+
+.event__card {
+	border: 2px solid black;
+}
+
+.event__image-box {
+	width: 100%;
+	object-fit: contain;
+}
+
+.event__image {
+	
+}
