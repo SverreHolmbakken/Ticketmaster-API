@@ -7,7 +7,7 @@ export default function renderEvents(element) {
 	const eventImage = document.createElement('img');
 	const eventText = document.createElement('div');
 	const eventTitle = document.createElement('h2');
-	const eventStartDay = document.createElement('h3');
+	const eventStartDiv = document.createElement('div');
 	const eventStartDate = document.createElement('h3');
 	const eventStartTime = document.createElement('h3');
 	const eventVenue = document.createElement('h3');
@@ -60,7 +60,7 @@ export default function renderEvents(element) {
 	eventImageBox.className = 'event__image-box';
 	eventText.className = 'event__text'
 	eventTitle.className = 'event__title';
-	eventStartDay.className = 'event__start-day';
+	eventStartDiv.className = 'event__start-div';
 	eventStartDate.className = 'event__start-date';
 	eventStartTime.className = 'event__start-time';
 	eventVenue.className = 'event__venue';
@@ -73,23 +73,33 @@ export default function renderEvents(element) {
 	eventTitle.textContent = `${element.name}`;
 	eventStartDate.textContent = `${dateDay} ${date}`;
 	if (element._embedded.venues[0].name == undefined) {
-		eventVenue.textContent = `${element._embedded.venues[0].address.line1}`
+		eventVenue.textContent = `
+		${element._embedded.venues[0].address.line1} |
+		${element._embedded.venues[0].country.name}
+		`
 	} else {
-		eventVenue.textContent = `${element._embedded.venues[0].name}`
+		eventVenue.textContent = `
+		${element._embedded.venues[0].name} |
+		${element._embedded.venues[0].country.name}
+		`
 	}
-	
+	console.log(element._embedded.venues[0].country.name)
 	eventsSection.append(eventCardLink);
 	eventCardLink.append(eventCard);
 	eventCard.append(
 		eventImageBox, 
 		eventText 
 		);
+		
 	eventText.append(
 		eventTitle,
-		eventStartTime,
-		eventStartDate,
-		eventStartDay,
+		eventStartDiv,
 		eventVenue
 		);
+
+	eventStartDiv.append(
+		eventStartTime,
+		eventStartDate
+	)
 	eventImageBox.append(eventImage);
 }
