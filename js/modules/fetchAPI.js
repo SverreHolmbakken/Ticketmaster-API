@@ -3,7 +3,7 @@ import renderEvents from "./renderEvents.js";
 // import { currentDropdownValue } from "./filterEvents.js";
 // const dropdown = currentDropdownValue()
 import { API_KEY } from "../../env.js";
-let currentDropdownValue = 'SE';
+let currentDropdownValue = 'NO';
 export default async function fetchAPI() {
 	//data model
 	let countryCode = currentDropdownValue;
@@ -12,8 +12,7 @@ export default async function fetchAPI() {
 	const options = {
 		method: "GET"
 	};
-	const endpoint	= `${baseURL}?apikey=${apiKey}&countryCode=${countryCode}` ;
-	console.log(endpoint)
+	const endpoint	= `${baseURL}?apikey=${apiKey}&countryCode=${countryCode}&size=18&locale=*&sort=date,asc` ;
 
 	const response = await fetch(endpoint, options);
 
@@ -37,28 +36,23 @@ async function handleResponse(response) {
 		const countryDropdown = document.getElementById('country');
 	
 		countryDropdown.addEventListener('change', handleDropdown);
-		function handleDropdown() {
-			emptyHTML()
+		function handleDropdown(event) {
+			event.preventDefault();
 			filterEvents()
 			fetchAPI()
-			eventList.forEach(element => {
-				renderEvents(element);
-			});
+			emptyHTML();
+			
 		}
 		function filterEvents() {
-			// let currentDropdownValue = ''
 			currentDropdownValue = countryDropdown.value;
-			console.log(currentDropdownValue);
 			return currentDropdownValue;
 		}
 
 		function emptyHTML() {
 			const eventsSection = document.querySelector('.events-section');
-			eventsSection.innerHTML = '';
+			eventsSection.innerText = '';
 		}
 
-		// filterEvents()
-		
 	} else if (response.status === 404) {
 		throw new Error('Url not existing');
 	} else if (response.status === 401) {
