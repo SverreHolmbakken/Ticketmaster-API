@@ -1,0 +1,36 @@
+.filter-section {
+	display: grid;
+	padding: 2rem;
+	grid-template-rows: 1fr;
+	grid-template-columns: repeat(4fr);
+	gap: 46px;
+}
+
+.filter__search {
+	grid-column: 1/4;
+	width: 100%;
+	padding: 21px;
+	background: #EEEEEE;
+	border-radius: 20px;
+}
+
+.filter__search-input {
+	width: 100%;
+	padding: 15px;
+	border-radius: 15px;
+	border: none;
+}
+
+.filter__country {
+	grid-column: 4/5;
+	padding: 21px;
+	background: #EEEEEE;
+	border-radius: 20px;
+}
+
+.filter__country-select {
+	width: 100%;
+	padding: 15px;
+	border-radius: 15px;
+	border: none;
+}

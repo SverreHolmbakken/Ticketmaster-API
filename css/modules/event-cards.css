@@ -1,3 +1,7 @@
+.events-box {
+	display: flex;
+	justify-content: center;
+}
 .events-section {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -17,7 +21,7 @@
 	/* width: 350px; */
 	/* border: 1px solid black; */
 	border-radius: 20px;
-	box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF, 25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0,0,0,0);
+	/* box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF, 25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0,0,0,0); */
 	transition: all 200ms ease-in-out;
 }
 
@@ -44,4 +48,10 @@
 
 .event__text {
 	padding: 0.5rem;
+}
+
+.event__start-div {
+	display: flex;
+	justify-content: space-between;
+	margin: 1rem 0 1rem 0;
 }

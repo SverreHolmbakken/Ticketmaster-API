@@ -2,4 +2,5 @@
 @import './reset.css';
 @import './base.css';
 
+@import './modules/filter-section.css';
 @import './modules/event-cards.css';
