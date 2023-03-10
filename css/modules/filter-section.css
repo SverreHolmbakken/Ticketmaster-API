@@ -1,9 +1,13 @@
 .filter-section {
 	display: grid;
-	padding: 2rem;
+	margin: 2rem;
 	grid-template-rows: 1fr;
-	grid-template-columns: repeat(4fr);
 	gap: 46px;
+}
+
+.filter-section input, 
+.filter-section select {
+	font-size: 20px;
 }
 
 .filter__search {
