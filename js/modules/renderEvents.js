@@ -83,7 +83,7 @@ export default function renderEvents(element) {
 		${element._embedded.venues[0].country.name}
 		`
 	}
-	console.log(element._embedded.venues[0].country.name)
+	
 	eventsSection.append(eventCardLink);
 	eventCardLink.append(eventCard);
 	eventCard.append(
@@ -98,8 +98,8 @@ export default function renderEvents(element) {
 		);
 
 	eventStartDiv.append(
-		eventStartTime,
-		eventStartDate
+		eventStartDate,
+		eventStartTime
 	)
 	eventImageBox.append(eventImage);
 }
