@@ -1,6 +1,7 @@
 @import './variables.css';
 @import './reset.css';
 @import './base.css';
+@import './fonts.css';
 
 @import './modules/filter-section.css';
 @import './modules/event-cards.css';

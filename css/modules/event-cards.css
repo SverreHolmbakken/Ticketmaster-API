@@ -47,7 +47,20 @@
 }
 
 .event__text {
+	display: flex;
+	justify-content: space-around;
+	flex-flow: column;
 	padding: 0.5rem;
+	height: 13rem;
+	font-family: var(--primaryfont);
+}
+
+.event__title {
+	border-bottom: 2px solid black;
+}
+
+.event__venue {
+	align-items: end;
 }
 
 .event__start-div {
