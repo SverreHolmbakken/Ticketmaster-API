@@ -50,8 +50,8 @@ export default function renderEvents(element) {
 		'Tuesday',
 		'Wednesday',
 		'Thursday',
-		'Sunday',
-		'Sunday',
+		'Friday',
+		'Saturday',
 	]
 	const dateDay = days[dayOfTheWeek.getDay()]
 
@@ -68,7 +68,7 @@ export default function renderEvents(element) {
 	eventCardLink.href = `${element.url}`
 	eventCardLink.setAttribute('target', '_blank')
 
-	eventImageBox.style.background = `transparent url(${element.images.find(image => image.width > 600)?.url}) no-repeat center` 
+	eventImageBox.style.background = `transparent url(${element.images.find(image => image.width > 600)?.url}) no-repeat center`;
 	
 	eventTitle.textContent = `${element.name}`;
 	eventStartDate.textContent = `${dateDay} ${date}`;
@@ -76,30 +76,31 @@ export default function renderEvents(element) {
 		eventVenue.textContent = `
 		${element._embedded.venues[0].address.line1} |
 		${element._embedded.venues[0].country.name}
-		`
+		`;
 	} else {
 		eventVenue.textContent = `
 		${element._embedded.venues[0].name} |
 		${element._embedded.venues[0].country.name}
-		`
-	}
-	
+		`;
+	};
+
 	eventsSection.append(eventCardLink);
 	eventCardLink.append(eventCard);
 	eventCard.append(
 		eventImageBox, 
 		eventText 
-		);
+	);
 		
 	eventText.append(
 		eventTitle,
 		eventStartDiv,
 		eventVenue
-		);
+	);
 
 	eventStartDiv.append(
 		eventStartDate,
 		eventStartTime
-	)
+	);
+
 	eventImageBox.append(eventImage);
 }

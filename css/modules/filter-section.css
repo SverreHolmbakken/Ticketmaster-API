@@ -38,3 +38,13 @@
 	border-radius: 15px;
 	border: none;
 }
+
+@media screen and (max-width: 800px) {
+	.filter-section {
+		display: block;
+	}
+
+	.filter__search {
+		margin-bottom: 1rem;
+	}
+}
