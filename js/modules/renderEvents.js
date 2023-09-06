@@ -69,6 +69,7 @@ export default function renderEvents(element) {
 	eventCardLink.setAttribute('target', '_blank')
 
 	eventImageBox.style.background = `transparent url(${element.images.find(image => image.width > 600)?.url}) no-repeat center`;
+	eventImageBox.style.backgroundSize = 'cover';
 	
 	eventTitle.textContent = `${element.name}`;
 	eventStartDate.textContent = `${dateDay} ${date}`;
